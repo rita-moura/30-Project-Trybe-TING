@@ -13,7 +13,7 @@ class Queue(AbstractQueue):
 
     def dequeue(self):
         if len(self.queue) == 0:
-            raise IndexError("Queue is empty")
+            raise IndexError("A fila está vazia")
         return self.queue.pop(0)
 
     def search(self, index):
