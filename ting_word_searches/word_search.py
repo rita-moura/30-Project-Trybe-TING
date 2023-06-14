@@ -4,7 +4,6 @@ def exists_word(word, instance):
 
     for i in range(len(instance)):
         fila = instance.search(i)
-        
         instance_result = {
             "palavra": word,
             "arquivo": fila["nome_do_arquivo"],
@@ -13,18 +12,13 @@ def exists_word(word, instance):
             } for index, linha in enumerate(fila["linhas_do_arquivo"])
                 if word.lower() in linha.lower()]
         }
-        
         result.append(instance_result)
-        
         if len(instance_result["ocorrencias"]) == 0:
             counter += 1
 
     if counter == len(instance):
         return []
-    
     return result
-
-
 
 
 def search_by_word(word, instance):
@@ -33,7 +27,6 @@ def search_by_word(word, instance):
 
     for i in range(len(instance)):
         fila = instance.search(i)
-        
         instance_result = {
             "palavra": word,
             "arquivo": fila["nome_do_arquivo"],
@@ -45,13 +38,10 @@ def search_by_word(word, instance):
                 if word.lower() in linha.lower()
             ]
         }
-        
         result.append(instance_result)
-        
         if len(instance_result["ocorrencias"]) == 0:
             counter += 1
 
     if counter == len(instance):
         return []
-    
     return result
